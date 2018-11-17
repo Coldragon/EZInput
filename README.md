@@ -1,9 +1,14 @@
-#EZInput 
+# EZInput 
 A simple layer for SDL2 input for fast use of input in test or small software
 
-#Example
+# Example
 
 ```c
+#include <SDL2/SDL.h>
+
+#define INCLUDE_EZINPUT_IMPLEMENTATION
+#include "ezinput.h"
+
 int main(int argc, char ** argv)
 {
 	SDL_Window * window = 0;
@@ -21,7 +26,7 @@ int main(int argc, char ** argv)
 }
 ```
 
-#Licence
+# Licence
 
 	MIT License
  
