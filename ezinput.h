@@ -346,7 +346,7 @@ struct EZInput
 	unsigned int		mousey;
 };
 
-static struct EZInput INTERNAL_EZINPUT_X08xBaA;
+static struct EZInput InteRnAl_EziNPuT_Xo8xBaA;
 
 EZINPUT_INLINE bool EZInput_Return()
 {
@@ -354,81 +354,82 @@ EZINPUT_INLINE bool EZInput_Return()
 	
 	for (int i = 0; i < 512; i++)
 	{
-		INTERNAL_EZINPUT_X08xBaA.OnPress[i] = 0;
-		INTERNAL_EZINPUT_X08xBaA.OnRelease[i] = 0;
+		InteRnAl_EziNPuT_Xo8xBaA.OnPress[i] = 0;
+		InteRnAl_EziNPuT_Xo8xBaA.OnRelease[i] = 0;
 	}
 
-	INTERNAL_EZINPUT_X08xBaA.leftclic_OnPress = 0;
-	INTERNAL_EZINPUT_X08xBaA.leftclic_OnRelease = 0;
-	INTERNAL_EZINPUT_X08xBaA.rightclic_OnPress = 0;
-	INTERNAL_EZINPUT_X08xBaA.rightclic_OnRelease = 0;
+	InteRnAl_EziNPuT_Xo8xBaA.leftclic_OnPress = 0;
+	InteRnAl_EziNPuT_Xo8xBaA.leftclic_OnRelease = 0;
+	InteRnAl_EziNPuT_Xo8xBaA.rightclic_OnPress = 0;
+	InteRnAl_EziNPuT_Xo8xBaA.rightclic_OnRelease = 0;
 
 	while (SDL_PollEvent(&event))
 	{
 		switch (event.type)
 		{
 		case SDL_QUIT:
-			INTERNAL_EZINPUT_X08xBaA.quit = 1;
+			InteRnAl_EziNPuT_Xo8xBaA.quit = 1;
 			break;
 		case SDL_KEYDOWN:
-			if (INTERNAL_EZINPUT_X08xBaA.Pressed[event.key.keysym.scancode] == 0)
+			if (InteRnAl_EziNPuT_Xo8xBaA.Pressed[event.key.keysym.scancode] == 0)
 			{
-				INTERNAL_EZINPUT_X08xBaA.Pressed[event.key.keysym.scancode] = 1;
-				INTERNAL_EZINPUT_X08xBaA.OnPress[event.key.keysym.scancode] = 1;
+				InteRnAl_EziNPuT_Xo8xBaA.Pressed[event.key.keysym.scancode] = 1;
+				InteRnAl_EziNPuT_Xo8xBaA.OnPress[event.key.keysym.scancode] = 1;
 			}
 			break;
 		case SDL_KEYUP:
-			if (INTERNAL_EZINPUT_X08xBaA.Pressed[event.key.keysym.scancode] == 1)
+			if (InteRnAl_EziNPuT_Xo8xBaA.Pressed[event.key.keysym.scancode] == 1)
 			{
-				INTERNAL_EZINPUT_X08xBaA.Pressed[event.key.keysym.scancode] = 0;
-				INTERNAL_EZINPUT_X08xBaA.OnRelease[event.key.keysym.scancode] = 1;
+				InteRnAl_EziNPuT_Xo8xBaA.Pressed[event.key.keysym.scancode] = 0;
+				InteRnAl_EziNPuT_Xo8xBaA.OnRelease[event.key.keysym.scancode] = 1;
 			}
 			break;
 		case SDL_MOUSEBUTTONDOWN:
 			if (event.button.button == SDL_BUTTON_LEFT)
 			{
-				if (INTERNAL_EZINPUT_X08xBaA.leftclic_pressed == 0)
+				if (InteRnAl_EziNPuT_Xo8xBaA.leftclic_pressed == 0)
 				{
-					INTERNAL_EZINPUT_X08xBaA.leftclic_pressed = 1;
-					INTERNAL_EZINPUT_X08xBaA.leftclic_OnPress = 1;
+					InteRnAl_EziNPuT_Xo8xBaA.leftclic_pressed = 1;
+					InteRnAl_EziNPuT_Xo8xBaA.leftclic_OnPress = 1;
 				}
 			}
 			if (event.button.button == SDL_BUTTON_RIGHT)
 			{
-				if (INTERNAL_EZINPUT_X08xBaA.rightclic_pressed == 0)
+				if (InteRnAl_EziNPuT_Xo8xBaA.rightclic_pressed == 0)
 				{
-					INTERNAL_EZINPUT_X08xBaA.rightclic_pressed = 1;
-					INTERNAL_EZINPUT_X08xBaA.rightclic_OnPress = 1;
+					InteRnAl_EziNPuT_Xo8xBaA.rightclic_pressed = 1;
+					InteRnAl_EziNPuT_Xo8xBaA.rightclic_OnPress = 1;
 				}
 			}
 			break;
 		case SDL_MOUSEBUTTONUP:
 			if (event.button.button == SDL_BUTTON_LEFT)
 			{
-				if (INTERNAL_EZINPUT_X08xBaA.leftclic_pressed == 1)
+				if (InteRnAl_EziNPuT_Xo8xBaA.leftclic_pressed == 1)
 				{
-					INTERNAL_EZINPUT_X08xBaA.leftclic_pressed = 0;
-					INTERNAL_EZINPUT_X08xBaA.leftclic_OnRelease = 1;
+					InteRnAl_EziNPuT_Xo8xBaA.leftclic_pressed = 0;
+					InteRnAl_EziNPuT_Xo8xBaA.leftclic_OnRelease = 1;
 				}
 			}
 			if (event.button.button == SDL_BUTTON_RIGHT)
 			{
-				if (INTERNAL_EZINPUT_X08xBaA.rightclic_pressed == 1)
+				if (InteRnAl_EziNPuT_Xo8xBaA.rightclic_pressed == 1)
 				{
-					INTERNAL_EZINPUT_X08xBaA.rightclic_pressed = 0;
-					INTERNAL_EZINPUT_X08xBaA.rightclic_OnRelease = 1;
+					InteRnAl_EziNPuT_Xo8xBaA.rightclic_pressed = 0;
+					InteRnAl_EziNPuT_Xo8xBaA.rightclic_OnRelease = 1;
 				}
 			}
 			break;
 		case SDL_MOUSEMOTION:
-			INTERNAL_EZINPUT_X08xBaA.mousex = event.motion.x;
-			INTERNAL_EZINPUT_X08xBaA.mousey = event.motion.y;
+			InteRnAl_EziNPuT_Xo8xBaA.mousex = event.motion.x;
+			InteRnAl_EziNPuT_Xo8xBaA.mousey = event.motion.y;
 			break;
 		case SDL_WINDOWEVENT:
 			switch (event.window.event)
 			{
 			case SDL_WINDOWEVENT_RESIZED:
 				GPU_SetWindowResolution(event.window.data1, event.window.data2);
+				GPU_ResetProjection();
 				break;
 			default:
 				break;
@@ -438,37 +439,37 @@ EZINPUT_INLINE bool EZInput_Return()
 		}
 	}
 
-	return !INTERNAL_EZINPUT_X08xBaA.quit;
+	return !InteRnAl_EziNPuT_Xo8xBaA.quit;
 }
 
 EZINPUT_INLINE void EZInput_Reset()
 {
-	int temp2 = INTERNAL_EZINPUT_X08xBaA.quit;
-	int mousex = INTERNAL_EZINPUT_X08xBaA.mousex;
-	int mousey = INTERNAL_EZINPUT_X08xBaA.mousey;
+	int temp2 = InteRnAl_EziNPuT_Xo8xBaA.quit;
+	int mousex = InteRnAl_EziNPuT_Xo8xBaA.mousex;
+	int mousey = InteRnAl_EziNPuT_Xo8xBaA.mousey;
 
-	memset(&INTERNAL_EZINPUT_X08xBaA, 0, sizeof(EZInput));
+	memset(&InteRnAl_EziNPuT_Xo8xBaA, 0, sizeof(EZInput));
 
-	INTERNAL_EZINPUT_X08xBaA.quit = temp2;
-	INTERNAL_EZINPUT_X08xBaA.mousex = mousex;
-	INTERNAL_EZINPUT_X08xBaA.mousey = mousey;
+	InteRnAl_EziNPuT_Xo8xBaA.quit = temp2;
+	InteRnAl_EziNPuT_Xo8xBaA.mousex = mousex;
+	InteRnAl_EziNPuT_Xo8xBaA.mousey = mousey;
 }
 
 EZINPUT_INLINE bool EZInput_Pressed(enum EZI_Key button)
 {
 	if (button < 512)
 	{
-		return INTERNAL_EZINPUT_X08xBaA.Pressed[button];
+		return InteRnAl_EziNPuT_Xo8xBaA.Pressed[button];
 	}
 	if (button > 600 && button < EZI_KEY_MAX)
 	{
 		if (button == EZI_KEY_LEFTCLICK)
 		{
-			return INTERNAL_EZINPUT_X08xBaA.leftclic_pressed;
+			return InteRnAl_EziNPuT_Xo8xBaA.leftclic_pressed;
 		}
 		if (button == EZI_KEY_RIGHTCLICK)
 		{
-			return INTERNAL_EZINPUT_X08xBaA.rightclic_pressed;
+			return InteRnAl_EziNPuT_Xo8xBaA.rightclic_pressed;
 		}
 	}
 	return false;
@@ -478,17 +479,17 @@ EZINPUT_INLINE bool EZInput_OnPress(enum EZI_Key button)
 {
 	if (button < 512)
 	{
-		return INTERNAL_EZINPUT_X08xBaA.OnPress[button];
+		return InteRnAl_EziNPuT_Xo8xBaA.OnPress[button];
 	}
 	if (button > 600 && button < EZI_KEY_MAX)
 	{
 		if (button == EZI_KEY_LEFTCLICK)
 		{
-			return INTERNAL_EZINPUT_X08xBaA.leftclic_OnPress;
+			return InteRnAl_EziNPuT_Xo8xBaA.leftclic_OnPress;
 		}
 		if (button == EZI_KEY_RIGHTCLICK)
 		{
-			return INTERNAL_EZINPUT_X08xBaA.rightclic_OnPress;
+			return InteRnAl_EziNPuT_Xo8xBaA.rightclic_OnPress;
 		}
 	}
 	return false;
@@ -498,17 +499,17 @@ EZINPUT_INLINE bool EZInput_OnRelease(enum EZI_Key button)
 {
 	if (button < 512)
 	{
-		return INTERNAL_EZINPUT_X08xBaA.OnRelease[button];
+		return InteRnAl_EziNPuT_Xo8xBaA.OnRelease[button];
 	}
 	if (button > 600 && button < EZI_KEY_MAX)
 	{
 		if (button == EZI_KEY_LEFTCLICK)
 		{
-			return INTERNAL_EZINPUT_X08xBaA.leftclic_OnRelease;
+			return InteRnAl_EziNPuT_Xo8xBaA.leftclic_OnRelease;
 		}
 		if (button == EZI_KEY_RIGHTCLICK)
 		{
-			return INTERNAL_EZINPUT_X08xBaA.rightclic_OnRelease;
+			return InteRnAl_EziNPuT_Xo8xBaA.rightclic_OnRelease;
 		}
 	}
 	return false;
@@ -516,17 +517,17 @@ EZINPUT_INLINE bool EZInput_OnRelease(enum EZI_Key button)
 
 EZINPUT_INLINE unsigned int EZInput_MouseX()
 {
-	return INTERNAL_EZINPUT_X08xBaA.mousex;
+	return InteRnAl_EziNPuT_Xo8xBaA.mousex;
 }
 
 EZINPUT_INLINE unsigned int EZInput_MouseY()
 {
-	return INTERNAL_EZINPUT_X08xBaA.mousey;
+	return InteRnAl_EziNPuT_Xo8xBaA.mousey;
 }
 
 EZINPUT_INLINE void EZInput_Quit()
 {
-	INTERNAL_EZINPUT_X08xBaA.quit = true;
+	InteRnAl_EziNPuT_Xo8xBaA.quit = true;
 }
 
 #endif
