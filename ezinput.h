@@ -342,8 +342,10 @@ struct EZInput
 	bool				rightclic_OnPress;
 	bool				leftclic_OnRelease;
 	bool				rightclic_OnRelease;
-	unsigned int		mousex;
-	unsigned int		mousey;
+	unsigned int			mousex;
+	unsigned int			mousey;
+	
+	bool 				windowHasBeenResized;
 };
 
 static struct EZInput InteRnAl_EziNPuT_Xo8xBaA;
@@ -362,7 +364,7 @@ EZINPUT_INLINE bool EZInput_Return()
 	InteRnAl_EziNPuT_Xo8xBaA.leftclic_OnRelease = 0;
 	InteRnAl_EziNPuT_Xo8xBaA.rightclic_OnPress = 0;
 	InteRnAl_EziNPuT_Xo8xBaA.rightclic_OnRelease = 0;
-
+	InteRnAl_EziNPuT_Xo8xBaA.windowHasBeenResized = 0;
 	while (SDL_PollEvent(&event))
 	{
 		switch (event.type)
@@ -428,8 +430,9 @@ EZINPUT_INLINE bool EZInput_Return()
 			switch (event.window.event)
 			{
 			case SDL_WINDOWEVENT_RESIZED:
-				GPU_SetWindowResolution(event.window.data1, event.window.data2);
-				GPU_ResetProjection();
+				InteRnAl_EziNPuT_Xo8xBaA.windowHasBeenResized = 1;
+				//GPU_SetWindowResolution(event.window.data1, event.window.data2);
+				//GPU_ResetProjection();
 				break;
 			default:
 				break;
