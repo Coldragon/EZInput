@@ -1,5 +1,5 @@
 # EZInput 
-A simple layer for SDL2 input for fast use of input in test or small software
+A simple layer for SDL2 input for quick test on SDL2 projects
 
 # Example
 
